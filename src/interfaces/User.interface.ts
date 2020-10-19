@@ -4,8 +4,19 @@ export interface UserDTOInterface {
     id: string;
 }
 
-export interface UserInterface {
+export interface UserCredentialsInterface {
     username: string;
-    name: string;
     password: string;
+}
+
+export interface UserReqInterface {
+    name: string;
+    username: string;
+    password: string;
+}
+
+export interface UserInterface {
+    name: string;
+    username: string;
+    passwordHash: string;
 }

@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 import userService from '../services/userService';
-import { UserInterface } from '../interfaces/User.interface';
+import { UserReqInterface } from '../interfaces/User.interface';
 
 const router: Router = express.Router();
 
@@ -27,7 +27,7 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        const user: UserInterface = req.body;
+        const user: UserReqInterface = req.body;
 
         const newUser = await userService.createUser(user);
 

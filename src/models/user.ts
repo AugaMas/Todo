@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import uniqueValidator from 'mongoose-unique-validator';
+import { UserInterface } from '../interfaces/User.interface';
 
 const userSchema = new mongoose.Schema({
     username: { type: String, unique: true },
@@ -17,6 +18,6 @@ userSchema.set('toJSON', {
 });
 
 userSchema.plugin(uniqueValidator);
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model<UserInterface & mongoose.Document>('User', userSchema);
 
 export default User;

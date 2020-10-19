@@ -1,12 +1,12 @@
 import app from '../app';
 import supertest from 'supertest';
 import helper from './test_helper';
-import { UserInterface } from '../interfaces/User.interface';
+import { UserReqInterface } from '../interfaces/User.interface';
 
 const api = supertest(app);
 
 describe('/api/user', () => {
-    const userMock: UserInterface = { username: 'Testas', name: 'Testas', password: 'testas' };
+    const userMock: UserReqInterface = { username: 'Testas', name: 'Testas', password: 'testas' };
     beforeEach(async () => {
         await helper.cleanDatabase();
     });

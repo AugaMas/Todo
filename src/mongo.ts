@@ -7,6 +7,6 @@ mongoose
     .then((_result) => {
         logger.info('connected to MongoDB');
     })
-    .catch((error) => {
+    .catch((error: Error) => {
         logger.error('error connecting to MongoDB:', error.message);
     });

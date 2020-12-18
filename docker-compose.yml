@@ -1,0 +1,15 @@
+version: '3'
+services:
+    web:
+        build: .
+        ports:
+            - '${PORT}:3000'
+        volumes:
+            - .:/home/node/code
+            - /home/node/code/node_modules
+        links:
+            - db
+        env_file:
+            - .env
+    db:
+        image: mongo:3

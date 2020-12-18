@@ -18,7 +18,7 @@ switch (process.env.NODE_ENV) {
         MONGODB_URI = process.env.MONGODB_URI_TESTING || 'mongodb://127.0.0.1:27017/testing';
         break;
     case 'development':
-        MONGODB_URI = process.env.MONGODB_DEV_URI || 'mongodb://127.0.0.1:27017/todo_dev';
+        MONGODB_URI = process.env.MONGODB_DEV_URI || 'mongodb://db:27017/todo';
         break;
     case 'production':
         MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todo';
